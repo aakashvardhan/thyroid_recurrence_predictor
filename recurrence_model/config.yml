@@ -1,0 +1,111 @@
+# Thyroid Recurrence Prediction Model Configuration
+
+# App config
+package_name: recurrence_model
+training_data_file: filtered_thyroid_data.csv
+test_data_file: filtered_thyroid_data.csv
+pipeline_save_file: recurrence_model_
+
+# Model config
+target: Recurred
+features:
+  - Age
+  - Gender
+  - HxRadiotherapy
+  - Adenopathy
+  - Pathology
+  - Focality
+  - Risk
+  - T
+  - N
+  - M
+  - Stage
+  - Response
+
+# Feature variable names
+age_var: Age
+gender_var: Gender
+hxradiotherapy_var: HxRadiotherapy
+adenopathy_var: Adenopathy
+pathology_var: Pathology
+focality_var: Focality
+risk_var: Risk
+t_stage_var: T
+n_stage_var: N
+m_stage_var: M
+stage_var: Stage
+response_var: Response
+
+# Feature mappings
+gender_map:
+  F: 0
+  M: 1
+
+hxradiotherapy_map:
+  No: 0
+  Yes: 1
+
+adenopathy_map:
+  No: 0
+  Right: 1
+  Left: 2
+  Bilateral: 3
+  Extensive: 4
+  Posterior: 5
+
+pathology_map:
+  Micropapillary: 0
+  Papillary: 1
+  Follicular: 2
+  Hurthel cell: 3
+
+focality_map:
+  Uni-Focal: 0
+  Multi-Focal: 1
+
+risk_map:
+  Low: 0
+  Intermediate: 1
+  High: 2
+
+t_stage_map:
+  T1a: 0
+  T1b: 1
+  T2: 2
+  T3a: 3
+  T3b: 4
+  T4a: 5
+  T4b: 6
+
+n_stage_map:
+  N0: 0
+  N1a: 1
+  N1b: 2
+
+m_stage_map:
+  M0: 0
+  M1: 1
+
+stage_map:
+  I: 0
+  II: 1
+  III: 2
+  IVA: 3
+  IVB: 4
+
+response_map:
+  Excellent: 0
+  Indeterminate: 1
+  Biochemical Incomplete: 2
+  Structural Incomplete: 3
+
+recurrence_map:
+  No: 0
+  Yes: 1
+
+# Model hyperparameters
+test_size: 0.2
+random_state: 42
+tol: 0.0001
+C: 1.0
+max_iter: 100

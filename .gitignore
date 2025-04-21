@@ -1,0 +1,7 @@
+*.pyc
+*.pkl
+*.csv
+*.json
+*.jsonl
+*.jsonl.gz
+.cursor
