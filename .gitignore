@@ -5,3 +5,7 @@
 *.jsonl
 *.jsonl.gz
 .cursor
+*.log
+*.gz
+*.whl
+recurrence_model.egg-info

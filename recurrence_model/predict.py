@@ -56,7 +56,7 @@ if __name__ == "__main__":
     data_in = {
         "Age": 77,
         "Gender": "M",
-        "Hx Radiothreapy": "Yes",
+        "HxRadiotherapy": "Yes",
         "Adenopathy": "No",
         "Pathology": "Micropapillary",
         "Focality": "Uni-Focal",
