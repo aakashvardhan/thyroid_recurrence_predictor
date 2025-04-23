@@ -1,0 +1,25 @@
+name: CD Pipeline
+
+# Only trigger when the CI Pipeline workflow succeeded
+on:
+  workflow_run:
+    workflows: ["Push Thyroid Recurrence Docker Image"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Pull Docker Image
+        env:
+          DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+        run: sudo docker pull $DOCKER_USER/thyroid-recurrence-api:latest
+      
+      - name: Delete Old Docker Container
+        run: sudo docker rm -f thyroid-recurrence-api-container || true
+      
+      - name: Run Docker Container
+        env:
+          DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+        run: sudo docker run -d -p 8001:8001 --name thyroid-recurrence-api-container $DOCKER_USER/thyroid-recurrence-api:latest
