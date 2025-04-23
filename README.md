@@ -152,4 +152,7 @@ sudo apt install docker.io -y
 - Click "New self-hosted runner"
 - Follow the provided instructions
 
-![ec2]()
+![ec2](https://github.com/aakashvardhan/thyroid_recurrence_predictor/blob/main/asset/ec2_runner_screenshot.png)
+
+4. Start the runner as a service
+
