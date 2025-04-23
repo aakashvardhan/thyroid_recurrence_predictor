@@ -1,11 +1,44 @@
-*.pyc
-*.pkl
-*.csv
-*.json
-*.jsonl
-*.jsonl.gz
-.cursor
-*.log
-*.gz
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
 *.whl
-recurrence_model.egg-info
+*.tar.gz
+
+# Trained model files
+*.pkl
+*.joblib
+*.h5
+*.hdf5
+saved_models/
+
+# Environment directories
+venv/
+env/
+.env/
+.venv/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+*.mdc
