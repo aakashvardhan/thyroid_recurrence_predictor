@@ -152,7 +152,42 @@ sudo apt install docker.io -y
 - Click "New self-hosted runner"
 - Follow the provided instructions
 
-![ec2](https://github.com/aakashvardhan/thyroid_recurrence_predictor/blob/main/asset/ec2_runner_screenshot.png)
-
 4. Start the runner as a service
 
+To Download:
+```bash
+# Create a folder
+$ mkdir actions-runner && cd actions-runner# Download the latest runner package
+$ curl -o actions-runner-osx-x64-2.323.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.323.0/actions-runner-osx-x64-2.323.0.tar.gz
+$ tar xzf ./actions-runner-osx-x64-2.323.0.tar.gz
+```
+
+To Configure:
+
+```bash
+# Create the runner and start the configuration experience
+$ ./config.sh --url https://github.com/aakashvardhan/thyroid_recurrence_predictor --token <inserttoken> # Last step, run it!
+$ ./run.sh
+```
+
+5. Verify runner appears in Github repository
+
+![ec2](https://github.com/aakashvardhan/thyroid_recurrence_predictor/blob/main/asset/ec2_runner_screenshot.png)
+
+## API Usage
+
+Once deployed, the API can be accessed at:
+
+```
+http://<ec2-instance-public-ip>:8001
+```
+
+## Monitoring
+
+Monitor the application:
+
+- Check container status: sudo docker ps
+- View logs: sudo docker logs thyroid-recurrence-api-container
+- GitHub Actions provides workflow execution history
+
+![ec2-window](https://github.com/aakashvardhan/thyroid_recurrence_predictor/blob/main/asset/ec2_instance_window.png)
